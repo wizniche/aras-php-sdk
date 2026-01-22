@@ -1,6 +1,6 @@
 <?php
 
-namespace Aras\Payments\Models;
+namespace PAYwiz\Payments\Models;
 
 /**
  * Transaction Model

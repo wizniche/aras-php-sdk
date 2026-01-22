@@ -1,27 +1,27 @@
 <?php
 
-namespace Aras\Payments;
+namespace PAYwiz\Payments;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
-use Aras\Payments\Exceptions\ApiException;
+use PAYwiz\Payments\Exceptions\ApiException;
 
 /**
- * Aras Payments SDK Client
+ * PAYwiz Payments SDK Client
  * 
- * Main client for interacting with the Aras Payments Platform API.
+ * Main client for interacting with the PAYwiz Payments Platform API.
  * Provides methods for merchant onboarding, transactions, and refunds.
  */
-class ArasClient
+class PAYwizClient
 {
     private Client $httpClient;
     private string $apiKey;
     private string $baseUrl;
 
     /**
-     * Create a new Aras client instance
+     * Create a new PAYwiz client instance
      *
-     * @param string $apiKey Your API key from the Aras platform
+     * @param string $apiKey Your API key from the PAYwiz platform
      * @param string $environment 'sandbox' or 'production'
      * @param string|null $baseUrl Custom base URL (optional)
      */

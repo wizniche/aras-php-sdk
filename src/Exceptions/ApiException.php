@@ -1,6 +1,6 @@
 <?php
 
-namespace Aras\Payments\Exceptions;
+namespace PAYwiz\Payments\Exceptions;
 
 use Exception;
 

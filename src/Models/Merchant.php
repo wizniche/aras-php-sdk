@@ -1,11 +1,11 @@
 <?php
 
-namespace Aras\Payments\Models;
+namespace PAYwiz\Payments\Models;
 
 /**
  * Merchant Model
  * 
- * Represents a merchant account in the Aras Payments platform.
+ * Represents a merchant account in the PAYwiz Payments platform.
  */
 class Merchant
 {

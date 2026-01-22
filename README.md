@@ -1,11 +1,11 @@
-# Aras Payments PHP SDK
+# PAYwiz Payments PHP SDK
 
-Official PHP SDK for the Aras Payments Platform. Easily integrate merchant onboarding, transaction management, and refund processing into your PHP application.
+Official PHP SDK for the Payments Platform. Easily integrate merchant onboarding, transaction management, and refund processing into your PHP application.
 
 ## Installation
 
 ```bash
-composer require aras/payments-sdk
+composer require paywiz/payments-sdk
 ```
 
 ## Quick Start
@@ -14,11 +14,11 @@ composer require aras/payments-sdk
 <?php
 require 'vendor/autoload.php';
 
-use Aras\Payments\ArasClient;
-use Aras\Payments\Exceptions\ApiException;
+use PAYwiz\Payments\PAYwizClient;
+use PAYwiz\Payments\Exceptions\ApiException;
 
 // Initialize the client
-$client = new ArasClient('your-api-key', 'sandbox');
+$client = new PAYwizClient('your-api-key', 'sandbox');
 ```
 
 ## Merchant Onboarding
@@ -136,8 +136,8 @@ try {
 The SDK includes model classes for type-safe operations:
 
 ```php
-use Aras\Payments\Models\Merchant;
-use Aras\Payments\Models\Transaction;
+use PAYwiz\Payments\Models\Merchant;
+use PAYwiz\Payments\Models\Transaction;
 
 // Create merchant with model
 $merchant = new Merchant([
@@ -175,7 +175,7 @@ foreach ($transactions as $transaction) {
 ## Error Handling
 
 ```php
-use Aras\Payments\Exceptions\ApiException;
+use PAYwiz\Payments\Exceptions\ApiException;
 
 try {
     $result = $client->createMerchant($data);
@@ -213,7 +213,7 @@ try {
 
 ```php
 // For self-hosted or custom environments
-$client = new ArasClient(
+$client = new PAYwizClient(
     'your-api-key',
     'production',
     'https://custom.yourdomain.com'
@@ -223,7 +223,7 @@ $client = new ArasClient(
 ### Custom Timeout
 
 ```php
-$client = new ArasClient('your-api-key', 'production');
+$client = new PAYwizClient('your-api-key', 'production');
 $client->setTimeout(60); // 60 seconds
 ```
 
@@ -275,8 +275,7 @@ Valid organization types:
 
 ## Support
 
-- Documentation: https://docs.araspayments.com
-- Email: support@araspayments.com
+- Email: support@wizniche.com
 
 ## License
 

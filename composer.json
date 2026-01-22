@@ -1,13 +1,13 @@
 {
-    "name": "aras/payments-sdk",
-    "description": "PHP SDK for Aras Payments Platform - Onboarding, Transactions & Refunds",
+    "name": "paywiz/payments-sdk",
+    "description": "PHP SDK for PAYwiz Payments Platform - Onboarding, Transactions & Refunds",
     "type": "library",
     "license": "MIT",
     "version": "1.0.0",
     "authors": [
         {
-            "name": "Aras Payments",
-            "email": "support@araspayments.com"
+            "name": "PAYwiz Payments",
+            "email": "support@paywizpayments.com"
         }
     ],
     "require": {
@@ -19,12 +19,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Aras\\Payments\\": "src/"
+            "PAYwiz\\Payments\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Aras\\Payments\\Tests\\": "tests/"
+            "PAYwiz\\Payments\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "stable",

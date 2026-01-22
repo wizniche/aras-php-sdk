@@ -20,6 +20,8 @@ class ComposerStaticInitf2d8fb0912da1ea315160048b18a7795
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
             'PhpParser\\' => 10,
+            'PAYwiz\\Payments\\Tests\\' => 22,
+            'PAYwiz\\Payments\\' => 16,
         ),
         'G' =>
         array (
@@ -30,11 +32,6 @@ class ComposerStaticInitf2d8fb0912da1ea315160048b18a7795
         'D' =>
         array (
             'DeepCopy\\' => 9,
-        ),
-        'A' =>
-        array (
-            'Aras\\Payments\\Tests\\' => 20,
-            'Aras\\Payments\\' => 14,
         ),
     );
 
@@ -52,6 +49,14 @@ class ComposerStaticInitf2d8fb0912da1ea315160048b18a7795
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'PAYwiz\\Payments\\Tests\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
+        ),
+        'PAYwiz\\Payments\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'GuzzleHttp\\Psr7\\' =>
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -67,14 +72,6 @@ class ComposerStaticInitf2d8fb0912da1ea315160048b18a7795
         'DeepCopy\\' =>
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
-        ),
-        'Aras\\Payments\\Tests\\' =>
-        array (
-            0 => __DIR__ . '/../..' . '/tests',
-        ),
-        'Aras\\Payments\\' =>
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
