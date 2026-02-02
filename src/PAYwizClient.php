@@ -256,6 +256,53 @@ class PAYwizClient
     }
 
     // =========================================================================
+    // STORES
+    // =========================================================================
+
+    /**
+     * Create a store for an existing account holder
+     *
+     * Creates a new store with balance account, sweep configuration, and Adyen store.
+     *
+     * @param string $accountHolderId The Adyen account holder ID (e.g., AH1234567890)
+     * @param array $storeData Store information
+     * @return array Store creation result
+     * @throws ApiException
+     * 
+     * @example
+     * $result = $client->createStore('AH1234567890', [
+     *     'description' => 'Downtown Store',
+     *     'shopperStatement' => 'DOWNTOWN STORE',
+     *     'phoneNumber' => '+14155551234',
+     *     'address' => [
+     *         'street' => '456 Market Street',
+     *         'street2' => 'Suite 200',
+     *         'city' => 'San Francisco',
+     *         'state' => 'CA',
+     *         'postalCode' => '94102',
+     *         'country' => 'US'
+     *     ],
+     *     'transferFeeGroup' => 5,
+     *     'settlementDelayDays' => 1
+     * ]);
+     * 
+     * // Minimal example (only required field)
+     * $result = $client->createStore('AH1234567890', [
+     *     'description' => 'My New Store'
+     * ]);
+     */
+    public function createStore(string $accountHolderId, array $storeData): array
+    {
+        if (empty($storeData['description'])) {
+            throw new ApiException('description (store name) is required', 400, [
+                'description' => 'Store description/name is required'
+            ]);
+        }
+
+        return $this->post("/api/v1/stores/by-account-holder/{$accountHolderId}", $storeData);
+    }
+
+    // =========================================================================
     // HTTP METHODS
     // =========================================================================
 

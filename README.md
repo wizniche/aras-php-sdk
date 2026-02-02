@@ -144,6 +144,54 @@ try {
 }
 ```
 
+## Stores
+
+### Create a Store
+
+Create additional stores for an existing account holder:
+
+```php
+try {
+    $result = $client->createStore('AH1234567890', [
+        'description' => 'Downtown Store',
+        'shopperStatement' => 'DOWNTOWN STORE',
+        'phoneNumber' => '+14155551234',
+        'address' => [
+            'street' => '456 Market Street',
+            'street2' => 'Suite 200',
+            'city' => 'San Francisco',
+            'state' => 'CA',
+            'postalCode' => '94102',
+            'country' => 'US'
+        ],
+        'transferFeeGroup' => 5,
+        'settlementDelayDays' => 1
+    ]);
+    
+    echo "Store created: " . $result['data']['id'] . "\n";
+    echo "Balance Account: " . $result['data']['balanceAccountId'] . "\n";
+
+} catch (ApiException $e) {
+    echo "Error: " . $e->getMessage() . "\n";
+}
+
+// Minimal example (only required field)
+$result = $client->createStore('AH1234567890', [
+    'description' => 'My New Store'
+]);
+```
+
+### Store Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `description` | string | Yes | Store name/description |
+| `shopperStatement` | string | No | Statement descriptor (max 22 chars) |
+| `phoneNumber` | string | No | Store phone number |
+| `address` | array | No | Store address |
+| `transferFeeGroup` | int | No | Split configuration ID |
+| `settlementDelayDays` | int | No | Settlement delay (default: 1) |
+
 ## Using Models
 
 The SDK includes model classes for type-safe operations:
