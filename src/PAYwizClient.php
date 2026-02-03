@@ -67,10 +67,12 @@ class PAYwizClient
      * - Hosted Onboarding URL
      *
      * @param array $merchantData Merchant information
+     * @param string|null $mode Optional mode ('async' for asynchronous processing)
      * @return array Response containing accountId, onboardingUrl, etc.
      * @throws ApiException
      * 
      * @example
+     * // Standard (synchronous) creation
      * $result = $client->createMerchant([
      *     'companyName' => 'Coffee House LLC',
      *     'email' => 'owner@coffeehouse.com',
@@ -92,10 +94,19 @@ class PAYwizClient
      *         'country' => 'US'
      *     ]
      * ]);
+     * 
+     * // Async creation (faster response, processing in background)
+     * $result = $client->createMerchant($merchantData, 'async');
      */
-    public function createMerchant(array $merchantData): array
+    public function createMerchant(array $merchantData, ?string $mode = null): array
     {
-        return $this->post('/api/v1/onboarding/accounts', $merchantData);
+        $endpoint = '/api/v1/onboarding/accounts';
+        
+        if ($mode !== null) {
+            $endpoint .= '?mode=' . urlencode($mode);
+        }
+        
+        return $this->post($endpoint, $merchantData);
     }
 
     /**

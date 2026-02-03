@@ -64,6 +64,9 @@ try {
         print_r($e->getErrors());
     }
 }
+
+// Async mode (faster response, processing in background)
+$result = $client->createMerchant($merchantData, 'async');
 ```
 
 ### Check Merchant Status
